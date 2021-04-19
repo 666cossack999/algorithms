@@ -111,9 +111,17 @@ namespace Lesson1_1_block_diagram
                 ExpectedException = null
             };
 
+            var testCase4 = new TestCase()
+            {
+                N = 5,
+                Expected = false,
+                ExpectedException = null
+            };
+
             TestSimple(testCase1);
             TestSimple(testCase2);
             TestSimple(testCase3);
+            TestSimple(testCase4);
         }
     }
 
