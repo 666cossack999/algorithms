@@ -16,7 +16,7 @@ namespace Lesson2_List
             //вставляем значение после нужной ноды
             MyList.AddNodeAfter(myNode, 5);
             //Удаляем по значению
-            Node myNode1 = MyList.FindNode(11);
+            Node myNode1 = MyList.FindNode(8);
             MyList.RemoveNode(myNode1);
             //Удаляем по индексу
             MyList.RemoveNode(1);

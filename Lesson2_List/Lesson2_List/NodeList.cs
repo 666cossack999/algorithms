@@ -83,7 +83,9 @@ namespace Lesson2_List
         {
             
             var newNode = new Node(node, value, node.NextNode);
+            node.NextNode.PrevNode = newNode;
             node.NextNode = newNode;
+
             nodes.Add(newNode);
 
         }
@@ -117,8 +119,17 @@ namespace Lesson2_List
             nodes.Remove(node);
             var prevNode = node.PrevNode;
             var nextNode = node.NextNode;
-            prevNode.NextNode = nextNode;
-            nextNode.PrevNode = prevNode;
+
+            if (prevNode != null)
+            {
+                prevNode.NextNode = nextNode;
+            }
+            
+            if (nextNode != null)
+            {
+                nextNode.PrevNode = prevNode;
+            }
+            
 
         }
     }
