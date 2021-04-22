@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2_List", "Lesson2_List\Lesson2_List.csproj", "{E4CAAE24-8EBA-46C9-BFFB-0004FDF4B13E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson2_List", "Lesson2_List\Lesson2_List.csproj", "{E4CAAE24-8EBA-46C9-BFFB-0004FDF4B13E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2_2_BinarySearch", "Lesson2_2_BinarySearch\Lesson2_2_BinarySearch.csproj", "{B0B4A601-1461-45A4-AF3E-5266F3460BAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E4CAAE24-8EBA-46C9-BFFB-0004FDF4B13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4CAAE24-8EBA-46C9-BFFB-0004FDF4B13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4CAAE24-8EBA-46C9-BFFB-0004FDF4B13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B4A601-1461-45A4-AF3E-5266F3460BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B4A601-1461-45A4-AF3E-5266F3460BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B4A601-1461-45A4-AF3E-5266F3460BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B4A601-1461-45A4-AF3E-5266F3460BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

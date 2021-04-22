@@ -7,7 +7,7 @@ namespace Lesson2_List
     class NodeList : ILinkedList
     {
         List<Node> nodes = new List<Node>();
-        int size = 0;
+      
         public NodeList()
         {
 
@@ -26,7 +26,7 @@ namespace Lesson2_List
             {
                 var newNode = new Node(null, value, null);
                 nodes.Add(newNode);
-                size++;
+                
             }
             else
             {
@@ -55,29 +55,71 @@ namespace Lesson2_List
             return null;
         }
 
+        /// <summary>
+        /// Ищет первую ноду в списке
+        /// </summary>
+        /// <returns>first Node</returns>
+        public Node GetFirstNode()
+        {
+
+            foreach (var node in nodes)
+            {
+                if (node.PrevNode == null)
+                {
+                    return node;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Ищет нужную ноду в списке
+        /// </summary>
+        /// <param name="value">значение</param>
+        /// <returns>Ноду с нужным значением</returns>
+       
+
         public void AddNodeAfter(Node node, int value)
         {
-            throw new NotImplementedException();
+            
+            var newNode = new Node(node, value, node.NextNode);
+            node.NextNode = newNode;
+            nodes.Add(newNode);
+
         }
 
         public Node FindNode(int searchValue)
         {
-            throw new NotImplementedException();
+            foreach (var node in nodes)
+            {
+                if (node.Value == searchValue)
+                {
+                    return node;
+                }
+            }
+            return null;
         }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return nodes.Count;
         }
 
         public void RemoveNode(int index)
         {
-            throw new NotImplementedException();
+            nodes.RemoveAt(index);
+            nodes[index - 1].NextNode = nodes[index]?.NextNode;
+            nodes[index].PrevNode = nodes[index]?.PrevNode;
         }
 
         public void RemoveNode(Node node)
         {
-            throw new NotImplementedException();
+            nodes.Remove(node);
+            var prevNode = node.PrevNode;
+            var nextNode = node.NextNode;
+            prevNode.NextNode = nextNode;
+            nextNode.PrevNode = prevNode;
+
         }
     }
 }
