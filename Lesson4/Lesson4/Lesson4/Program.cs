@@ -9,11 +9,7 @@ namespace Lesson4
     {
         static void Main(string[] args)
         {
-           var reuslt = BenchmarkRunner.Run<MyBenchClass>();
-
-            Console.WriteLine("Здарова______________________");
-            Console.WriteLine(reuslt.Table);
-            
+           BenchmarkRunner.Run<MyBenchClass>();            
         }
     }
 }
