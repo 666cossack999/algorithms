@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lesson4_2_Tree
 {
@@ -148,6 +149,39 @@ namespace Lesson4_2_Tree
                 Value = value
             };
             return _node;
+        }
+
+        public TreeNode BfsSearchTree(int number)
+        {
+            var bufer = new Queue<TreeNode>();
+            bufer.Enqueue(node);
+
+            Console.WriteLine($"Добавляем корень {node.Value} в очередь");
+
+            while (bufer.Count != 0)
+            {
+                var root = bufer.Dequeue();
+                Console.WriteLine($"Вытягиваем ноду {root.Value} из начала очереди и удаляемиз списка");
+                if (root != null)
+                {
+                    Console.WriteLine($"Сравниваем с {number}");
+                    if (root.Value == number)
+                        return root;
+                    Console.WriteLine($"Удаляем ноду {root.Value} из стэка");
+                    if (root.LeftChild != null)
+                    {
+                        Console.WriteLine($"Добавляем в стек левую ноду {root.LeftChild.Value}");
+                        bufer.Enqueue(root.LeftChild);
+                    }
+                    if (root.RightChild != null)
+                    {
+                        bufer.Enqueue(root.RightChild);
+                        Console.WriteLine($"Добавляем в стек правого ноду {root.RightChild.Value}");
+                    }
+                }
+            }
+            Console.Write("Элемент не найдев, возвращаю корень: ");
+            return node;
         }
     }
 }
