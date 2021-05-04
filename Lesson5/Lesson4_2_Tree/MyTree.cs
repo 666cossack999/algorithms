@@ -154,34 +154,41 @@ namespace Lesson4_2_Tree
         public TreeNode BfsSearchTree(int number)
         {
             var bufer = new Queue<TreeNode>();
+            Console.WriteLine($"Поиск элемента {number} в дереве");
             bufer.Enqueue(node);
 
-            Console.WriteLine($"Добавляем корень {node.Value} в очередь");
+            Console.WriteLine($"Добавляем корень {node.Value} в начало очереди");
 
             while (bufer.Count != 0)
             {
                 var root = bufer.Dequeue();
-                Console.WriteLine($"Вытягиваем ноду {root.Value} из начала очереди и удаляемиз списка");
+                Console.WriteLine($"Достаём элемент {root.Value} из начала очереди");
                 if (root != null)
                 {
                     Console.WriteLine($"Сравниваем с {number}");
                     if (root.Value == number)
+                    {
+                        Console.WriteLine("Нашёл!!!");
                         return root;
-                    Console.WriteLine($"Удаляем ноду {root.Value} из стэка");
+                    }    
+                        
+
+                    Console.WriteLine($"Удаляем элемент {root.Value} из стэка");
                     if (root.LeftChild != null)
                     {
-                        Console.WriteLine($"Добавляем в стек левую ноду {root.LeftChild.Value}");
+                        Console.WriteLine($"Добавляем в стек левый элемент {root.LeftChild.Value}");
                         bufer.Enqueue(root.LeftChild);
                     }
                     if (root.RightChild != null)
                     {
                         bufer.Enqueue(root.RightChild);
-                        Console.WriteLine($"Добавляем в стек правого ноду {root.RightChild.Value}");
+                        Console.WriteLine($"Добавляем в стек правый элемент {root.RightChild.Value}");
                     }
                 }
+                Console.WriteLine();
             }
-            Console.Write("Элемент не найдев, возвращаю корень: ");
-            return node;
+            Console.Write("Элемент не найден, возвращаю null ");
+            return null;
         }
     }
 }

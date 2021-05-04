@@ -25,6 +25,8 @@ namespace Lesson4_2_Tree
 
             treeNode.PrintTree();
             Console.WriteLine("\n");
+
+
             treeNode.BfsSearchTree(10);
         }
     }
