@@ -1,6 +1,5 @@
 using Lesson4_2_Tree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Xunit;
 
 namespace MyTreeTest
 {
